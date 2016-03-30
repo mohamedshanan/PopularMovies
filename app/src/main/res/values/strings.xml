@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_movie_details">Movie Details</string>
+    <string name="label_over_view">movie overview</string>
+    <string name="label_release_date">release date</string>
+    <string name="label_rate">vote average</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="no_connection">Please check your network connection.</string>
+
+    <!-- Strings related to Settings -->
+
+    <!--  General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_sort_title">Sort movies by</string>
+    <string name="pref_sort_key">sort_list</string>
+
+    <string name="pref_sort_popular_label">Most popular</string>
+    <string name="pref_sort_rated_label">Highest-rated</string>
+    <string name="pref_sort_popular">popular</string>
+    <string name="pref_sort_rated">top_rated</string>
+
+    <string-array name="pref_sort_list_titles">
+        <item>most popular</item>
+        <item>highest-rated</item>
+    </string-array>
+    <string-array name="pref_sort_list_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+</resources>

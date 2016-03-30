@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="@dimen/fab_margin"
+    tools:showIn="@layout/content_movie_details">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="9" >
+        <LinearLayout
+            android:layout_height="0dp" android:layout_width="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/details_title"
+                android:gravity="center"
+                android:textColor="#EEAA00"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Movie Title" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="0dp" android:layout_width="match_parent"
+            android:layout_weight="4" >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:layout_margin="@dimen/fab_margin"
+                android:id="@+id/details_imageview" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="0dp" android:layout_width="match_parent"
+            android:layout_weight="1"  android:orientation="horizontal" android:weightSum="2" android:padding="@dimen/fab_margin">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="#EEAA00"
+                android:text="@string/label_rate" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="#EEAA00"
+                android:id="@+id/details_rating" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="0dp" android:layout_width="match_parent"
+            android:layout_weight="1" android:orientation="horizontal" android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="#EEAA00"
+                android:text="@string/label_release_date"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textColor="#EEAA00"
+                android:id="@+id/details_date" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="0dp" android:layout_width="match_parent"
+            android:layout_weight="2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:singleLine="false"
+                android:id="@+id/details_overview"
+                android:textColor="#EEAA00"
+                android:layout_margin="@dimen/fab_margin"
+                android:gravity="center"/>
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
