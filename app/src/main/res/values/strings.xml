@@ -6,7 +6,7 @@
     <string name="label_release_date">release date</string>
     <string name="label_rate">vote average</string>
     <string name="title_activity_settings">Settings</string>
-    <string name="no_connection">Please check your network connection.</string>
+    <string name="no_connection">Please check your network connection and try again.</string>
 
     <!-- Strings related to Settings -->
 

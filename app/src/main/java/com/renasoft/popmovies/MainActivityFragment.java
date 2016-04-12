@@ -13,6 +13,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -38,8 +40,16 @@ public class MainActivityFragment extends Fragment {
         if(showMovies()){
             populateList(rootView);
         } else {
-            showAlertDialog(getActivity(), "Connection Problem", "Error Loading Data, Please check you Internet Connection", rootView);
+            showAlertDialog(getActivity(), "Connection Problem", "Error Loading Data, Please check you Internet Connection and try Again", rootView);
             rootView = inflater.inflate(R.layout.not_connected, container, false);
+            ImageButton btn_retry = (ImageButton) rootView.findViewById(R.id.btn_retry);
+
+            btn_retry.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    showMovies();
+                }
+            });
         }
         return rootView;
     }
@@ -51,6 +61,7 @@ public class MainActivityFragment extends Fragment {
     }
 
     private boolean showMovies(){
+        Toast.makeText(getActivity(), "I am Trying to Load Data", Toast.LENGTH_LONG).show();
         try {
             movies = new ArrayList<>();
 
