@@ -12,15 +12,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * Created by Mohamed on 16/03/2016.
+ * AsyncTask class to get data from TheMovieDB api
  */
 public class MoviesTask extends AsyncTask<String, Void, String> {
 
     private final String LOG_TAG = MoviesTask.class.getSimpleName();
-
-    public interface AsyncResponse{
-        void processFinish(String output);
-    }
 
     @Override
     protected String doInBackground(String... params) {
@@ -31,9 +27,10 @@ public class MoviesTask extends AsyncTask<String, Void, String> {
         HttpURLConnection connection = null;
         BufferedReader reader = null;
 
-        String moviesJsonStr = null;
+        String moviesJsonStr;
 
-        String sort = params[0];
+        // get the display "sort" mode
+        String displayMode = params[0];
 
         try{
             // URL url = new URL("http://api.themoviedb.org/3/movie/popular?api_key=41e7f883b667d51a09ef944ed6eb5afc");
@@ -43,11 +40,13 @@ public class MoviesTask extends AsyncTask<String, Void, String> {
             final String APP_KEY_PARAM = "api_key";
 
             Uri builtUri = Uri.parse(MOVIES_BASE_URL).buildUpon()
-                    .appendPath(sort)
+                    .appendPath(displayMode)
                     .appendQueryParameter(APP_KEY_PARAM, BuildConfig.MyApiKey).build();
 
 
             URL url = new URL(builtUri.toString());
+
+
 
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
