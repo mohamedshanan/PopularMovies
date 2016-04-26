@@ -3,89 +3,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-    android:padding="@dimen/fab_margin"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/fab_margin"
+    android:textColor="@android:color/darker_gray"
     tools:showIn="@layout/content_movie_details">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:weightSum="9" >
-        <LinearLayout
-            android:layout_height="0dp" android:layout_width="match_parent"
-            android:layout_weight="1">
-            <TextView
+
+
+    <TextView
+        android:id="@+id/details_title"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/details_title"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@color/colorAccent"
                 android:gravity="center"
-                android:textColor="#EEAA00"
+        android:padding="@dimen/fab_margin"
+        android:text="Movie Title"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Movie Title" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="0dp" android:layout_width="match_parent"
-            android:layout_weight="4" >
-            <ImageView
+        android:textColor="@color/colorPrimaryDark" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/details_overview"
+        android:background="@color/colorSeparator" />
+
+    <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="fitXY"
-                android:layout_margin="@dimen/fab_margin"
-                android:id="@+id/details_imageview" />
-        </LinearLayout>
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:orientation="horizontal"
+        android:padding="@dimen/img_margin">
+
+        <ImageView
+            android:id="@+id/details_imageview"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:scaleType="fitXY" />
+
         <LinearLayout
-            android:layout_height="0dp" android:layout_width="match_parent"
-            android:layout_weight="1"  android:orientation="horizontal" android:weightSum="2" android:padding="@dimen/fab_margin">
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+
             <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:textColor="#EEAA00"
-                android:text="@string/label_rate" />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:textColor="#EEAA00"
-                android:id="@+id/details_rating" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="0dp" android:layout_width="match_parent"
-            android:layout_weight="1" android:orientation="horizontal" android:weightSum="2">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:textColor="#EEAA00"
-                android:text="@string/label_release_date"
-                />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:textColor="#EEAA00"
-                android:id="@+id/details_date" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="0dp" android:layout_width="match_parent"
-            android:layout_weight="2">
-            <TextView
+                android:id="@+id/details_date"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:singleLine="false"
-                android:id="@+id/details_overview"
-                android:textColor="#EEAA00"
-                android:layout_margin="@dimen/fab_margin"
-                android:gravity="center"/>
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="test color primary dark" />
+
+            <TextView
+                android:id="@+id/details_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="test color primary" />
+
+            <ImageButton
+                android:id="@+id/add_to_favourites"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/star_white" />
+
         </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/details_overview"
+        android:background="@color/colorSeparator" />
+
+    <TextView
+        android:id="@+id/details_overview"
+                android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="@dimen/img_margin"
+        android:layout_weight="2"
+        android:padding="@dimen/img_margin"
+        android:singleLine="false" />
+
 </LinearLayout>

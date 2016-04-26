@@ -3,4 +3,9 @@
          (such as screen margins) for screens with more than 820dp of available width. This
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively). -->
     <dimen name="activity_horizontal_margin">64dp</dimen>
+    <integer name="img_width">300</integer>
+    <integer name="img_height">600</integer>
+    <integer name="gallery_columns">4</integer>
+    <dimen name="min_img_height">300dp</dimen>
+    <dimen name="max_img_height">600dp</dimen>
 </resources>

@@ -3,8 +3,14 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-
+    <dimen name="img_margin">5dp</dimen>
+    <dimen name="min_img_height">200dp</dimen>
+    <dimen name="max_img_height">400dp</dimen>
+    <dimen name="default_padding">10dp</dimen>
+    <integer name="img_width">150</integer>
+    <integer name="img_height">300</integer>
     <integer name="gallery_columns">2</integer>
+
 </resources>
 
 

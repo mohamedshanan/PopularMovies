@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PopMovies.iml" filepath="$PROJECT_DIR$/PopMovies.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PopMovies-24-04(1) - Retrofit 25.iml" filepath="$PROJECT_DIR$/PopMovies-24-04(1) - Retrofit 25.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

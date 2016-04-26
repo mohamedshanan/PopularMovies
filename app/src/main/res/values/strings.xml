@@ -7,7 +7,10 @@
     <string name="label_rate">vote average</string>
     <string name="title_activity_settings">Settings</string>
     <string name="no_connection">Please check your network connection and try again.</string>
-
+    <string name="no_conn_msg">Please check you Internet Connection and try Again</string>
+    <string name="no_conn_title">Connection Problem</string>
+    <string name="app_chooser_text">"Play trailer using"</string>
+    <string name="no_reviews">No reviews found for this movie</string>
     <!-- Strings related to Settings -->
 
     <!--  General settings -->
@@ -17,9 +20,11 @@
     <string name="pref_sort_key">sort_list</string>
 
     <string name="pref_sort_popular_label">Most popular</string>
-    <string name="pref_sort_rated_label">Highest-rated</string>
+    <string name="pref_sort_rated_label">Highest rated</string>
+    <string name="pref_sort_favorites_label">Favorite Movies</string>
     <string name="pref_sort_popular">popular</string>
     <string name="pref_sort_rated">top_rated</string>
+    <string name="pref_sort_favorites">favorites</string>
 
     <string-array name="pref_sort_list_titles">
         <item>most popular</item>
