@@ -1,9 +1,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.renasoft.popmovies.MainActivity" >
+    tools:context="com.renasoft.popmovies.MainActivity">
     <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
         android:orderInCategory="100"
+        android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@drawable/refresh"
+        android:orderInCategory="0"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_refresh"
+        tools:ignore="AppCompatResource" />
 </menu>

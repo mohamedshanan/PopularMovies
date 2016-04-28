@@ -34,4 +34,12 @@ public class Utils {
             progress.dismiss();
         }
     }
+
+    public static String parseTrailersUrl(String jsonStr) {
+        return "";
+    }
+
+    public static String parseReviews(String jsonStr) {
+        return "";
+    }
 }

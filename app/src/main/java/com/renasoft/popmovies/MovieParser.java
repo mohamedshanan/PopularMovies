@@ -9,7 +9,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 /**
- * Created by Mohamed on 16/03/2016.
+ * Created by Mohamed Shanan on 16/03/2016.
  */
 public class MovieParser {
     public static ArrayList<Movie> getMoviesData(Context context, String jsonStr) throws JSONException {
@@ -25,7 +25,6 @@ public class MovieParser {
         final String TMDB_DATE = "release_date";
 
         final String PICASSO_BASE = "http://image.tmdb.org/t/p/w342";
-
         JSONObject responseJson = new JSONObject(jsonStr);
         JSONArray moviesArray = responseJson.getJSONArray(TMDB_RESULTS);
 
@@ -48,6 +47,50 @@ public class MovieParser {
         }
 
         return movies;
+    }
+
+    public static ArrayList<Trailer> getTrailers(String jsonStr, Context context) throws JSONException {
+        final String TMDB_TRAILER_Key = "key";
+        final String TMDB_TRAILER_NAME = "name";
+        final String TMDB_RESULTS = "results";
+        JSONObject tempJson;
+        final String YOUTUBE_BASE = "https://www.youtube.com/watch?v=";
+
+        JSONObject responseJson = new JSONObject(jsonStr);
+        JSONArray jTrailerArray = responseJson.getJSONArray(TMDB_RESULTS);
+
+        ArrayList<Trailer> trailers = new ArrayList<>();
+
+        for (int i = 0; i < jTrailerArray.length(); i++) {
+            tempJson = jTrailerArray.getJSONObject(i);
+
+            trailers.add(new Trailer(tempJson.getString(TMDB_TRAILER_NAME), YOUTUBE_BASE + tempJson.getString(TMDB_TRAILER_Key), context));
+        }
+        return trailers;
+    }
+
+    public static ArrayList<Review> getReviews(String jsonStr) throws JSONException {
+        final String TMDB_REVIEW_ID = "id";
+        final String TMDB_REVIEW_AUTHOR = "author";
+        final String TMDB_REVIEW_CONTENT = "content";
+        final String TMDB_RESULTS = "results";
+
+        JSONObject tempJson;
+
+        JSONObject responseJson = new JSONObject(jsonStr);
+        JSONArray jReviewArray = responseJson.getJSONArray(TMDB_RESULTS);
+
+        ArrayList<Review> reviews = new ArrayList<>();
+
+        for (int i = 0; i < jReviewArray.length(); i++) {
+            tempJson = jReviewArray.getJSONObject(i);
+
+            reviews.add(new Review(tempJson.getString(TMDB_REVIEW_ID),
+                    tempJson.getString(TMDB_REVIEW_AUTHOR),
+                    tempJson.getString(TMDB_REVIEW_CONTENT)));
+        }
+        return reviews;
+
     }
 
 }

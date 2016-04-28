@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -46,32 +45,29 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     }
 
 
-
+    public interface OnItemClickListener {
+        void onItemClick(Movie movie);
+    }
 
     public static class  MovieViewHolder extends RecyclerView.ViewHolder {
         public ImageView img;
-        public TextView title;
 
         public MovieViewHolder(View v) {
             super(v);
             img = (ImageView) v.findViewById(R.id.grid_item_imageview);
-            title = (TextView) v.findViewById(R.id.grid_item_title);
         }
 
         public void bind (final Movie movie, final OnItemClickListener listener){
-            title.setText(movie.getMovie_title());
-            Picasso.with(itemView.getContext()).load(movie.getMovie_poster_path()).into(img);
+            Picasso.with(itemView.getContext()).load(movie.getMovie_poster_path()).resize(200, 200).into(img);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     listener.onItemClick(movie);
+
                 }
             });
         }
 
-    }
-
-    public interface OnItemClickListener {
-        void onItemClick(Movie movie);
     }
 }
