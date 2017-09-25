@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="6">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textColor="#F50F0F"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:textColor="@color/colorPrimaryDark"
+        android:gravity="bottom|center"
         android:text="@string/no_connection"
-        android:elegantTextHeight="false"
         android:textSize="25dp" />
-</FrameLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_margin="20dp"
+        android:textSize="25dp"
+        android:id="@+id/btn_retry"
+        android:text="Retry"/>
+</LinearLayout>

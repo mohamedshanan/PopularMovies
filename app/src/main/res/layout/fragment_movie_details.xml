@@ -3,89 +3,147 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
-    android:padding="@dimen/fab_margin"
     tools:showIn="@layout/content_movie_details">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:fillViewport="true">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:weightSum="9" >
-        <LinearLayout
-            android:layout_height="0dp" android:layout_width="match_parent"
-            android:layout_weight="1">
-            <TextView
+            android:orientation="vertical">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/details_title"
-                android:gravity="center"
-                android:textColor="#EEAA00"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Movie Title" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="0dp" android:layout_width="match_parent"
-            android:layout_weight="4" >
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:orientation="horizontal"
+                android:padding="@dimen/fab_margin"
+                android:textColor="@color/colorPrimaryDark">
+
+                <TextView
+                    android:id="@+id/details_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:gravity="center"
+                    android:text="Movie Title"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <ImageButton
+                    android:id="@+id/add_to_favourites"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:src="@drawable/star_white" />
+
+            </LinearLayout>
+
             <ImageView
+                android:id="@+id/details_imageview"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="fitXY"
-                android:layout_margin="@dimen/fab_margin"
-                android:id="@+id/details_imageview" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="0dp" android:layout_width="match_parent"
-            android:layout_weight="1"  android:orientation="horizontal" android:weightSum="2" android:padding="@dimen/fab_margin">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:textColor="#EEAA00"
-                android:text="@string/label_rate" />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:textColor="#EEAA00"
-                android:id="@+id/details_rating" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="0dp" android:layout_width="match_parent"
-            android:layout_weight="1" android:orientation="horizontal" android:weightSum="2">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:textColor="#EEAA00"
-                android:text="@string/label_release_date"
-                />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:textColor="#EEAA00"
-                android:id="@+id/details_date" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_height="0dp" android:layout_width="match_parent"
-            android:layout_weight="2">
-            <TextView
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/default_padding"
+                android:layout_marginLeft="@dimen/img_margin"
+                android:layout_marginRight="@dimen/img_margin"
+                android:layout_marginTop="@dimen/default_padding"
+                android:scaleType="fitXY" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:singleLine="false"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="@dimen/default_padding"
+                android:orientation="horizontal"
+                android:padding="@dimen/default_padding">
+
+                <TextView
+                    android:id="@+id/details_rating"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="test color primary"
+                    android:textColor="@color/colortext" />
+
+                <TextView
+                    android:id="@+id/details_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="test color primary dark"
+                    android:textColor="@color/colortext" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/details_overview"
+                android:background="@color/colorSeparator" />
+
+            <TextView
                 android:id="@+id/details_overview"
-                android:textColor="#EEAA00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_margin="@dimen/default_padding"
+                android:padding="@dimen/default_padding"
+                android:singleLine="false"
+                android:textColor="@color/colortext" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/details_overview"
+                android:background="@color/colorAccent"
+                android:paddingLeft="@dimen/default_padding"
+                android:text="Trailers"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/colorPrimary" />
+
+            <LinearLayout
+                android:id="@+id/linear_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:background="@color/colorAccent"
+                android:paddingLeft="@dimen/default_padding"
+                android:text="Reviews"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/reviews_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:isScrollContainer="false" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|right"
                 android:layout_margin="@dimen/fab_margin"
-                android:gravity="center"/>
-        </LinearLayout>
+                android:src="@drawable/star_white" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
